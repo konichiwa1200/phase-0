@@ -45,13 +45,17 @@ How does Ruby handle addition, subtraction, multiplication, and division of numb
 
 What is the difference between integers and floats?
 - integers are counting numbers and floats are decimal numbers
+
 What is the difference between integer and float division?
 - integer division rounds down final result
+
 What are strings? Why and when would you use them?
 - a sequence of characters that can include latin character symbols inclosed in single or double quotes that many times represents human language
 - good for storing names, descriptions, places; anything that can not be expressed by numbers
+
 What are local variables? Why and when would you use them?
 - variables who's scope is limited to the instance that they are called from
 - good for storing data that changes during an instance but not required downstream of your method or program
+
 How was this challenge? Did you get a good review of some of the basics?
 - Great. Really refreshed on the basics of Ruby
