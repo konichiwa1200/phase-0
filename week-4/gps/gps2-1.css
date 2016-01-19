@@ -1,0 +1,37 @@
+.column-1 {
+  float: left;
+  width:50%;
+  display: inline-block;
+}
+.column-2 {
+  float: right;
+  width: 50%;
+  display: inline-block;
+}
+footer {
+  clear: both;
+  text-align: center;
+}
+section {
+  background-color:white;
+}
+header {
+  background: #cce5ff;
+  text-align: center;
+  font-family: sans-serif;
+}
+footer {
+  background: #cce5ff;
+}
+h2 {
+  font-size: 0.9em;
+}
+article {
+  border: 1px solid black;
+}
+img {
+  max-width:10%;
+}
+a:hover {
+  color: green;
+}
