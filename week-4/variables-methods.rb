@@ -24,3 +24,4 @@ bigger
 
 
 # Challenge 4.3.1 link https://github.com/konichiwa1200/phase-0/blob/master/week-4/address/my_solution.rb
+# Challenge 4.3.1 link https://github.com/konichiwa1200/phase-0/blob/master/week-4/math/my_solution.rb
