@@ -27,7 +27,9 @@ p "There are #{minutes} minutes in a decade"
 ---
 ###Release 5
 Challenge 4.2.1 (https://github.com/konichiwa1200/phase-0/blob/master/week-4/defining-variables.rb)
+
 Challenge 4.2.2 (https://github.com/konichiwa1200/phase-0/blob/master/week-4/simple-string.rb)
+
 Challenge 4.2.3 (https://github.com/konichiwa1200/phase-0/blob/master/week-4/basic-math.rb)
 
 ---
@@ -39,7 +41,8 @@ How does Ruby handle addition, subtraction, multiplication, and division of numb
 	1. multiplication and division
 		1. left to right
 	1. addition and subtration
-		1. left to right	
+		1. left to right
+
 What is the difference between integers and floats?
 - integers are counting numbers and floats are decimal numbers
 What is the difference between integer and float division?
