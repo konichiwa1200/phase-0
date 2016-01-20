@@ -17,10 +17,6 @@
 def count_between(list_of_integers, lower_bound, upper_bound)
 	array_length = list_of_integers.sort!.length
 	counter = 0
-	list_of_integers.each do |element|
-		if element >= lower_bound && element <= upper_bound
-			counter += 1
-		end
-	end
+	list_of_integers.each {|element| counter += 1 if element >= lower_bound && element <= upper_bound}
 	counter
 end
