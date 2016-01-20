@@ -11,40 +11,15 @@
 # If +list_of_words+ is empty the method should return nil
 
 #Your Solution Below
-# def shortest_string(list_of_words)
-# 	if list_of_words.length == 0
-# 		nil
-# 	elsif list_of_words[0] == list_of_words['']
-# 		''
-# 	else
-# 		array_size = list_of_words.length
-# 		word_position = 0
-# 		word_length = 1000
-
-# 		for word in list_of_words
-# 			if word_length  word.length
-# 				word_length = word.length
-# 			end
-# 			word_position += 1
-# 		end
-# 		list_of_words[word_position]
-# 	end
-# end
-
 def shortest_string(list_of_words)
-	if list_of_words.length == 0
+	if list_of_words.length == 0 || list_of_words.length == 1
 		list_of_words[0]
-	elsif list_of_words.length == 1
-		list_of_words[0]
-	else
+	else 
 		word_length = 1000
 		short_word = ""
 
 		list_of_words.each do |word|
-			if word_length > word.length
-				word_length = word.length
-				short_word = word
-			end
+			(short_word = word) && (word_length = word.length) if word_length > word.length
 		end
 		short_word
 	end
