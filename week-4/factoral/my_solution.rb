@@ -1,7 +1,7 @@
 # Factorial
 
 # I worked on this challenge [by myself, with: ].
-
+#Myself, Luis Ybarra
 
 # Your Solution Below
 def factorial(number)
