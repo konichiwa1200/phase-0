@@ -52,7 +52,7 @@
 # 3. Refactored Solution
 def pad!(array, min_size, value = nil) #destructive
   if array.length < min_size
-    array = (0...min_size).collect {|num| array[num] == nil ? value : array[num]}
+    array.replace((0...min_size).collect {|num| array[num] == nil ? value : array[num]})
   else
     array
   end
@@ -66,5 +66,7 @@ def pad(array, min_size, value = nil) #non-destructive
   end
 end
 
+p pad!([1,2,3], 5)
+p pad([1,2,3], 5, 'apple')
 
 # 4. Reflection
