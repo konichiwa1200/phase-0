@@ -1,6 +1,6 @@
 # Calculate the mode Pairing Challenge
 
-# I worked on this challenge [by myself, with: rene castillo ]
+# I worked on this challenge [by myself, with: Kevin Sullivan]
 
 # I spent [] hours on this challenge.
 
