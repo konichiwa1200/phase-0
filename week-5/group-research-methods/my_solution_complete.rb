@@ -85,7 +85,7 @@ end
 
 # Person 4
 def my_array_deletion_method!(source, thing_to_delete)
-  source.replace(source.reject{|element| element.to_s.slice(thing_to_delete) == thing_to_delete})
+  source.reject!{|element| element.to_s.slice(thing_to_delete) == thing_to_delete}
 end
 
 def my_hash_deletion_method!(source, thing_to_delete)
