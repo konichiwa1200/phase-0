@@ -114,7 +114,37 @@ def cohort(role_call)
 			cohort_groups[item1][item2] = role_call.pop
 		end
 	end
-	cohort_groups
+	(0...total_groups).each {|group| p cohort_groups[group]}
+
 end
 
+cohort(users)
 
+#Reflection
+# What was the most interesting and most difficult part of this challenge?
+# I got stuck with a variable name on line 93, and it kept saying wrong number of arguments. It turned out
+# that I was calling "cohor" on line 93, but the variable that I was supposed to call was "cohort_groups". 
+# That through me off for about an hour, and then when I finally caught it, it became way easier.
+
+# Do you feel you are improving in your ability to write pseudocode and break the problem down?
+# No. I rarely use pseudocode and it has been difficult to use, because I have a style of coding that involves
+# getting from point a to point be, and being very fluid about it. Originally I wanted to use a loop to create
+# empty arrays but once I tried and then I read through the docs, I found out that there was no way to do what
+# I wanted to do. All I could do was set an instance variable of a class variable, but since we are still not
+# there yet, I didn't want to do it that way.
+
+# Was your approach for automating this task a good solution? What could have made it even better?
+# I could have incorporated a gets.chomp method for the group size determination, that way the user can determine
+# the size of each group. Also, I don't check to see if all of the students are assigned to a group, or if there
+# won't be enough students to fill each group; currently all groups have 5 users, but I think its because there
+# are a few students not being assigned.
+
+# # What data structure did you decide to store the accountability groups in and why?
+# A two dimentional array, but now reflecting, I could have used a hash table. A 16 x 5 matrix was used because
+# at the time of writing the code, this seemed a good use for iteration. But now, I can see that using an array
+# with all of the names of the groups, and then using that as a key, and sampling from the students array might
+# have been a better solution. Plus the printing of the users would have been easier, and more readable.
+
+# # What did you learn in the process of refactoring your initial solution? Did you learn any new Ruby methods?
+# I used the .pop method which was the first time I used it. The .shuffle method was a first, although if there 
+# was an easier way to get a non-duplicate sample like in R, that would have made things better.
