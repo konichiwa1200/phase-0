@@ -14,9 +14,24 @@
 
 
 # 1. Initial Solution
+def get_grade(grades)
+	# calculate average
+ 	sum = grades.reduce(:+)
+ 	mean = sum / grades.length
 
+ 	# generate the rubric
+ 	grade_percent = [0, 60, 70, 80, 90]
+ 	grade_book = %w(F D C B A)
 
+ 	# test to determine what letter grade will be assigned
+ 	truth_test = grade_percent.map {|element| mean >= element}.reject{|element| element == false}.count
+ 	truth_result = truth_test - 1
 
+ 	# return the letter grade
+	grade_book[truth_result]
+end
+
+# get_grade([80,90,60,60,90])
 # 3. Refactored Solution
 
 
