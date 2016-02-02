@@ -17,17 +17,24 @@
 # Initial Solution
 
 class Die
-  def initialize(labels)
-  end
+	def initialize(labels)
+		# checks to see that input is not empty
+		unless !labels.empty?
+			raise ArgumentError.new("Enter a positive number")
+		end
+	
+		@sides = labels.length
+	
+	end
 
-  def sides
-  end
+	def sides
+		# returns the value of length
+		@sides
+	end
 
-  def roll
-  end
+	def roll
+	end
 end
-
-
 
 # Refactored Solution
 
@@ -78,21 +85,23 @@ end
 # end
 
 # 3. Refactored Solution
-class Die
-  attr_reader :sides
+# class Die
+#   attr_reader :sides
 
-  def initialize(sides)
-  	unless sides > 0
-  		raise ArgumentError.new("Enter a positive number")
-  	end
-    @sides = sides
-  end
+#   def initialize(sides)
+#   	unless sides > 0
+#   		raise ArgumentError.new("Enter a positive number")
+#   	end
+#     @sides = sides
+#   end
 
-  def roll
-    (rand(sides) + 1).floor
-  end
+#   def roll
+#     (rand(sides) + 1).floor
+#   end
 
-end
+# end
+
+
 
 # # 4. Reflection
 # What is an ArgumentError and why would you use one?
