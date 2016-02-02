@@ -29,12 +29,19 @@ class GuessingGame
 
 
 	def initialize(answer)
-		unless answer.is_a? Numeric
+		unless !answer.is_a? Numeric
 			raise ArgumentError.new("Your array has no elements")
 		end
 		@number = answer
 		@guess = nil
 	end
+
+	def guess(number)
+		@guess = number
+	end
+
+	def check
+		case 
 
 
 end
