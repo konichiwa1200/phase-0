@@ -24,10 +24,39 @@
 
 # Initial Solution
 
-class BingoBoard
+# class BingoBoard
 
-	attr_accessor :bingo_board
-	attr_reader :letter, :number
+# 	attr_accessor :bingo_board
+# 	attr_reader :letter, :number
+
+# 	def initialize(board)
+# 		@bingo_board = board
+# 		@letter = nil
+# 		@number = nil
+# 	end
+
+# 	def call
+# 		@bingo = {'B'=>0,'I'=>1,'N'=>2,'G'=>3,'O'=>4}
+# 		@letter = rand(5) #4
+# 		@number = rand(100) + 1 #88
+# 		puts "Letter #{@bingo.key(@letter)}#{@number}"
+# 	end
+
+# 	def check
+# 		@bingo_board.each do |array| 
+# 			if array[@letter] == @number
+# 				array[@letter] = 'X'
+# 				p array
+# 			else
+# 				p array
+# 			end
+# 		end
+# 	end
+
+# end
+
+# Refactored Solution
+class BingoBoard
 
 	def initialize(board)
 		@bingo_board = board
@@ -43,20 +72,10 @@ class BingoBoard
 	end
 
 	def check
-		@bingo_board.each do |array| 
-			if array[@letter] == @number
-				array[@letter] = 'X'
-				p array
-			else
-				p array
-			end
-		end
+		@bingo_board.each {|array| array[@letter] == @number ? array[@letter] = 'X', p array : p array}
 	end
 
 end
-
-# Refactored Solution
-
 
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
