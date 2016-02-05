@@ -7,28 +7,51 @@
 # Outline:
 
 # Create a method to generate a letter ( b, i, n, g, o) and a number (1-100)
-  #fill in the outline here
+	# generate random letter from array spelling bingo and store in variable
+	# generate random number from range 1-100 and store in variable
 
 # Check the called column for the number called.
-  #fill in the outline here
+	# loop through arrays and find number using index notation
 
 # If the number is in the column, replace with an 'x'
-  #fill in the outline here
+	# set element to X string using index notation
 
 # Display a column to the console
-  #fill in the outline here
+	# use a loop to print each column to console
 
 # Display the board to the console (prettily)
-  #fill in the outline here
+	# use the 'puts' method
 
 # Initial Solution
 
 class BingoBoard
 
-  def initialize(board)
-    @bingo_board = board
-  end
+	attr_accessor :bingo_board
+	attr_reader :letter, :number
 
+	def initialize(board)
+		@bingo_board = board
+		@letter = nil
+		@number = nil
+	end
+
+	def call
+		@bingo = {'B'=>0,'I'=>1,'N'=>2,'G'=>3,'O'=>4}
+		@letter = rand(5) #4
+		@number = rand(100) + 1 #88
+		puts "Letter #{@bingo.key(@letter)}#{@number}"
+	end
+
+	def check
+		@bingo_board.each do |array| 
+			if array[@letter] == @number
+				array[@letter] = 'X'
+				p array
+			else
+				p array
+			end
+		end
+	end
 
 end
 
@@ -44,6 +67,9 @@ board = [[47, 44, 71, 8, 88],
         [75, 70, 54, 80, 83]]
 
 new_game = BingoBoard.new(board)
+
+new_game.call
+new_game.check
 
 
 #Reflection
