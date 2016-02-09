@@ -30,9 +30,20 @@
 //         str += "#"
 //     }
 // }
+ 
+triangle(5);
 
-// triangle(5);
-// Functions
+// FizzBuzz
+function fizzbuzz()
+{
+    var array = new Array(100);
+    for (var i in array) 
+    {
+        console.log(i);
+    }
+} 
+
+fizzbuzz();
 
 // Complete the `minimum` exercise.
 
