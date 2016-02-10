@@ -5,6 +5,7 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
+            // test comment
 			"program": "${workspaceRoot}/variables-objects.js",
 			"stopOnEntry": false,
 			"args": [],
