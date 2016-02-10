@@ -15,25 +15,31 @@ var terah = {
 }
 // __________________________________________
 // Write your code below.
-
-
-
-
-
-
-
-
-
-
+var adam = {};
+adam.name = "Adam";
+terah.spouse = adam;
+terah.weight = 125;
+delete terah.eyeColor;
+terah.spouse.spouse = terah;
+terah.children = {};
+terah.children.carson = {};
+terah.children.carson.name = "Carson";
+terah.children.carter = {};
+terah.children.carter.name = "Carter";
+terah.children.colton = {};
+terah.children.colton.name = "Colton";
+adam.children = terah.children;
 
 // __________________________________________
 // Reflection: Use the reflection guidelines
-//
-//
-//
-//
-//
-//
+// What tests did you have trouble passing? What did you do to make it pass? Why did that work?
+// I did not use the keyword "var" for the adam object and the debug editor kept telling me that it could not find name "adam". Once I looked at the error line, I had to refresh myself on the method of calling an new object from the eloquent.js book. It worked because I wanted a local variable, but with out it, it was being treated as a global variable.
+
+// How difficult was it to add and delete properties outside of the object itself?
+// Easy, simple assignment and use of the delete method
+
+// What did you learn about manipulating objects in this challenge?
+// Reinforced that when assigning values from one object to another like line 31, those values are passed by reference not by value, thus any update to one object will affect the value of the other.
 
 
 // __________________________________________
