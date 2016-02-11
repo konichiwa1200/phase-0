@@ -1,44 +1,45 @@
 // JavaScript Olympics
 
-// I paired [by myself, with:] on this challenge.
+// I paired [by myself, with:Elizabeth Roche] on this challenge.
 
-// This challenge took me [#] hours.
+// This challenge took me [1.5hr] hours.
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Warm Up
 
-// Bulk Up
-// var athlete_state = {};
-// function athlete(array) {
-//     athlete_state.name = array[0];
-//     athlete_state.event = array[1];
-//     athlete_state.win = athlete_state.name + " won the " + athlete_state.event + "!";
-// }
+var athlete1 = {
+  name: "Sarah",
+  event: "Ladie's Singles"
+}
 
+var athlete2 = {
+  name: "Michael",
+  event: "Men's Singles"
+}
+var athlete_array = [athlete1, athlete2];
 
+function add_property(array) {
+  for (var i = 0; i < array.length; i++){
+    array[i].win = array[i].name + " won the " + array[i].event + "!";    
+    console.log(array[i].win);
+  }
+}
+
+add_property(athlete_array)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Jumble your words
-// function scramble(phrase) {
-//     var array = phrase.split(" ");
-//     var len = array.length;
-    
-//     for (var i = 0; i < len; i++) {
-//         array[i] = array[i].split("").reverse().join("");
-//     }
-//     console.log(array.join(" "));
-// }
+function reverse_string(string){
+  console.log(Array.prototype.map.call(string, function(char) {return char}).reverse().join(""));
+}
 
-// function scramble(phrase) {
-//     var str = phrase.toString();
-    
-//     console.log(Array.prototype.map.call(str, function(x) {return x}).reverse().join(""));
-// }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 2,4,6,8
-// function appreciate(array) {
-//     var even = array.filter(function(num) { return num % 2 == 0; });
-//     console.log(even);
-// }
-
+function appreciate(array) {
+    var even = array.filter(function(num) { return num % 2 == 0; });
+    console.log(even);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "We built this city"
 function Athlete(name, age, sport, quote) {
     this.name = name;
@@ -47,11 +48,10 @@ function Athlete(name, age, sport, quote) {
     this.quote = quote;
 }
 
-
 var michaelPhelps = new Athlete("Michael Phelps", 29, "swimming", "It's medicinal I swear!")
 console.log(michaelPhelps.constructor === Athlete)
 console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps.quote)
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Reflection
 // What JavaScript knowledge did you solidify in this challenge?
 // That sometimes the instructions are so unclear, especially with no driver code that the solution can be completed by many different ways. This makes it a little daunghting since there could be a long time investigating possible outcomes that could be wrong.
