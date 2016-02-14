@@ -11,49 +11,6 @@
 //     3.1 show credits at the end
 
 // Functions:
-// Counter tracker
-// Return credits
-// Set links and image
-
-// Pseudocode
-// Counter tracker
-// Return credits
-// Set links and image
-
-// Initial Code
-// function call_id() {
-//     var target_id = ""
-//     onclick("target_id = this.id")
-//     return target_id
-// }
-
-// var clicked_element = ""
-
-// "tile-1".addEventListener(, function(event) {
-    
-// })
-// window.onload = function() {
-//     // var tile_selected = document.getElementById("tile-5")
-
-//     // tile_selected.addEventListener("click", function() {
-//     //     if(tile_selected.className == "tiles") {
-//     //         tile_selected.className = "tiles hidden"
-//     //     }
-//     // })
-// }
-//     $(document).ready(function(){
-//   $('#myid').bind('click', function(){
-//      alert($(this).attr('id'));
-//   });
-// });
-    
-//     function call_id() {
-//     var target_id = ""
-//     onclick("target_id = this.id")
-//     return target_id
-//     }
-// }
-
 window.onload = function() {
     var counter = 1
     var pictures = {
@@ -78,11 +35,10 @@ window.onload = function() {
             "By Jacky Lee - http://www.geolocation.ws/v/P/47493583/drain-off-floodwater/en, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=16238401", 
             ],
         address: [
-            "https://commons.wikimedia.org/w/index.php?curid=14299933", 
-            "https://commons.wikimedia.org/w/index.php?curid=41630516", 
-            "https://commons.wikimedia.org/w/index.php?curid=24112611", 
-            "https://commons.wikimedia.org/w/index.php?curid=46974721", 
-            "https://commons.wikimedia.org/w/index.php?curid=16238401", 
+            "Across_the_Squinty_Bridge_-_geograph.org.uk_-_1554330.jpg",
+            "Proboscis_monkey_(Nasalis_larvatus)_female_Labuk_Bay.jpg","Rechter_zijgevel_van_boerderij_en_een_houten_bedrijfsgedeelte_in_het_achterste_gedeelte_-_Ouderkerk_aan_de_Amstel_-_20409541_-_RCE.jpg",
+            "WTK20150914-DSC_0017.jpg",
+            "SupongDamAug2010-2.jpg",
             ],
     }
     
@@ -110,11 +66,12 @@ window.onload = function() {
     
     function setup() {
         for (var i = 1; i < 5; i++) {
-            var random_int = getRandomIntInclusive(0,7)
+            var random_int = getRandomIntInclusive(0,4)
             var picture_label = document.getElementById("link" + i)
-            picture_label.innerHTML = pictures.name[random_int]
-            picture_label.href = pictures.name[random_int]
+            picture_label.innerHTML = pictures.short_description[random_int]
+            picture_label.alt = pictures.short_description[random_int]
         }
+        img_setup()
     }
     
     function getRandomIntInclusive(min, max) {
@@ -123,15 +80,16 @@ window.onload = function() {
     
     function img_setup() {
         var random_picture = getRandomIntInclusive(1,4)
-        var random_picture_url = document.getElementById("link" + random_picture).href
-        document.getElementById("background_picture")
+        var random_picture_src = document.getElementById("link" + random_picture).alt
+        document.getElementById("background_picture").alt = random_picture_src
+        document.getElementById("background_picture").src = "img/" +pictures.address[random_picture]
     }
     
-    function evaluate_guess(element_passed) {
-        var img = document.getElementById(element_passed)
-        var guess = document.getElementById(element_passed)
-        if ()
-    }
+    // function evaluate_guess(element_passed) {
+    //     var img = document.getElementById(element_passed)
+    //     var guess = document.getElementById(element_passed)
+    //     if ()
+    // }
 }
 
 
