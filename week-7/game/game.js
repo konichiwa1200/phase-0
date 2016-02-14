@@ -55,13 +55,27 @@
 // }
 
 window.onload = function() {
-    var element_clicked = document.addEventListener("click", function(event) {
+    document.addEventListener("click", function(event) {
         console.log(event.target.id)
+        update_counter(event.target.id)
+        update_tile(event.target.id)
     })
-    var counter = 0
     
-    function update_counter() {
-        
+    var counter = 1
+    
+    function update_counter(element_passed) {
+        var element = document.getElementById("counter")
+        var check_class = document.getElementById(element_passed)
+        if (check_class.className == "tiles") {
+            element.innerHTML = counter++
+        }
+    }
+    
+    function update_tile(element_passed) {
+        var update_element = document.getElementById(element_passed)
+        if(update_element.className == "tiles") {
+            update_element.className = "tiles hidden"
+        }
     }
 }
 
