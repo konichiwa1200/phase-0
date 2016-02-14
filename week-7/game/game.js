@@ -57,17 +57,33 @@
 window.onload = function() {
     var counter = 1
     var pictures = {
-        name: ["Flowers", "Balloons", "Code", "Bridge", "Fls", "asdfsa", "qwer", "zxcv"],
-        credits: ["This is a", "Test for the", "Testing puposes", "of the Code", "a", "b", "c", "d"],
-        label: ["Flowers1", "Balloons1", "Code1", "Bridge1", "Floqqwersq", "Balqqlqoons", "Codeqq", "Brqqidge"],
-    }
-    
-    {
-    "purple bridge": "By Stephen Sweeney, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=14299933",
-    "monkey":"By Charlesjsharp - Own work, from Sharp Photography, sharpphotography, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=41630516",
-    "house":"By Rijksdienst voor het Cultureel Erfgoed, CC BY-SA 3.0 nl, https://commons.wikimedia.org/w/index.php?curid=24112611",
-    "thai house":"https://commons.wikimedia.org/w/index.php?curid=46974721",
-    "dam":"By Jacky Lee - http://www.geolocation.ws/v/P/47493583/drain-off-floodwater/en, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=16238401",
+        short_description: [
+            "Across the Squinty Bridge",
+            "Proboscis Monkey", 
+            "House with Overcast Weather", 
+            "Kalindi Khal Trek",
+            "Supong Dam"
+        ],
+        picture_name: [
+            "Across the Squinty Bridge",
+            "Proboscis monkey (Nasalis larvatus) female Labuk Bay", 
+            "Rechter zijgevel van boerderij en een houten bedrijfsgedeelte in het achterste gedeelte", 
+            "", 
+            "SupongDamAug2010-2", 
+            ],
+        credits: [
+            "By Stephen Sweeney, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=14299933", 
+            "By Charlesjsharp - Own work, from Sharp Photography, sharpphotography, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=41630516", 
+            "By Rijksdienst voor het Cultureel Erfgoed, CC BY-SA 3.0 nl, https://commons.wikimedia.org/w/index.php?curid=24112611", "https://commons.wikimedia.org/w/index.php?curid=46974721",
+            "By Jacky Lee - http://www.geolocation.ws/v/P/47493583/drain-off-floodwater/en, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=16238401", 
+            ],
+        address: [
+            "https://commons.wikimedia.org/w/index.php?curid=14299933", 
+            "https://commons.wikimedia.org/w/index.php?curid=41630516", 
+            "https://commons.wikimedia.org/w/index.php?curid=24112611", 
+            "https://commons.wikimedia.org/w/index.php?curid=46974721", 
+            "https://commons.wikimedia.org/w/index.php?curid=16238401", 
+            ],
     }
     
     setup()
