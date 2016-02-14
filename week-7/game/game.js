@@ -55,19 +55,33 @@
 // }
 
 window.onload = function() {
-    document.addEventListener("click", function(event) {
-        console.log(event.target.id)
-        update_counter(event.target.id)
-        update_tile(event.target.id)
-    })
-    
     var counter = 1
+    var pictures = {
+        name: ["Flowers", "Balloons", "Code", "Bridge", "Fls", "asdfsa", "qwer", "zxcv"],
+        credits: ["This is a", "Test for the", "Testing puposes", "of the Code", "a", "b", "c", "d"],
+        label: ["Flowers1", "Balloons1", "Code1", "Bridge1", "Floqqwersq", "Balqqlqoons", "Codeqq", "Brqqidge"],
+    }
+    
+    {
+    "purple bridge": "By Stephen Sweeney, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=14299933",
+    "monkey":"By Charlesjsharp - Own work, from Sharp Photography, sharpphotography, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=41630516",
+    "house":"By Rijksdienst voor het Cultureel Erfgoed, CC BY-SA 3.0 nl, https://commons.wikimedia.org/w/index.php?curid=24112611",
+    "thai house":"https://commons.wikimedia.org/w/index.php?curid=46974721",
+    "dam":"By Jacky Lee - http://www.geolocation.ws/v/P/47493583/drain-off-floodwater/en, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=16238401",
+    }
+    
+    setup()
+    
+    document.addEventListener("click", function(event) {
+        update_counter(event.target.id)
+    })
     
     function update_counter(element_passed) {
         var element = document.getElementById("counter")
         var check_class = document.getElementById(element_passed)
         if (check_class.className == "tiles") {
             element.innerHTML = counter++
+            update_tile(element_passed)
         }
     }
     
@@ -76,6 +90,31 @@ window.onload = function() {
         if(update_element.className == "tiles") {
             update_element.className = "tiles hidden"
         }
+    }
+    
+    function setup() {
+        for (var i = 1; i < 5; i++) {
+            var random_int = getRandomIntInclusive(0,7)
+            var picture_label = document.getElementById("link" + i)
+            picture_label.innerHTML = pictures.name[random_int]
+            picture_label.href = pictures.name[random_int]
+        }
+    }
+    
+    function getRandomIntInclusive(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    function img_setup() {
+        var random_picture = getRandomIntInclusive(1,4)
+        var random_picture_url = document.getElementById("link" + random_picture).href
+        document.getElementById("background_picture")
+    }
+    
+    function evaluate_guess(element_passed) {
+        var img = document.getElementById(element_passed)
+        var guess = document.getElementById(element_passed)
+        if ()
     }
 }
 
