@@ -2,11 +2,61 @@
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>Game</title>
+        <link rel="stylesheet" type="text/css" href="game.css">
+        <script src="game.js"></script>
+        <title>Guessing Game</title>
     </head>
     <body>
-        <main>
+        <header>
+            <nav>
+                Instructions: Click on the number tiles to make them disappear. Once you think what the picture is named, select the title from the right. 
+            </nav>
             
+        </header>
+        
+        <main>
+            <img src="img/Across_the_Squinty_Bridge_-_geograph.org.uk_-_1554330.jpg" alt="Squinty Bridge">
+            <span id="picture-credits"></span>
+            
+            <div onclick="call_id" class="grid">
+                <div class="tiles" id="tile-1">1</div>
+                <div class="tiles" id="tile-2">2</div>
+                <div class="tiles" id="tile-3">3</div>
+                <div class="tiles" id="tile-4">4</div>
+                <div class="tiles" id="tile-5">5</div>
+                <div class="tiles" id="tile-6">6</div>
+                <div class="tiles" id="tile-7">7</div>
+                <div class="tiles" id="tile-8">8</div>
+                <div class="tiles" id="tile-9">9</div>
+                <div class="tiles" id="tile-10">10</div>
+                <div class="tiles" id="tile-11">11</div>
+                <div class="tiles" id="tile-12">12</div>
+                <div class="tiles" id="tile-13">13</div>
+                <div class="tiles" id="tile-14">14</div>
+                <div class="tiles" id="tile-15">15</div>
+                <div class="tiles" id="tile-16">16</div>
+                <div class="tiles" id="tile-17">17</div>
+                <div class="tiles" id="tile-18">18</div>
+                <div class="tiles" id="tile-19">19</div>
+                <div class="tiles" id="tile-20">20</div>
+                <div class="tiles" id="tile-21">21</div>
+                <div class="tiles" id="tile-22">22</div>
+                <div class="tiles" id="tile-23">23</div>
+                <div class="tiles" id="tile-24">24</div>
+                <div class="tiles" id="tile-25">25</div>
+            </div>
+            
+            <div class="controls">
+                <ul class="guesses">
+                    <li><h1 class="counter">Counter</h1></li>
+                    <li><div id="counter">1</div></li>
+                    <li><h1 class="title">Possible Guesses</h1></li>
+                    <li><a href="#">Test 1</a></li>
+                    <li><a href="#">Test 2</a></li>
+                    <li><a href="#">Test 3 this is a long one</a></li>
+                    <li><a href="#">Test 4</a></li>
+                </ul>
+            </div>
         </main>
     </body>
 </html>
