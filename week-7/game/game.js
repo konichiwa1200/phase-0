@@ -21,20 +21,49 @@
 // Set links and image
 
 // Initial Code
-// function click_counter() {
-//     var id = document.addEventListener('click', function(x){
-        
-//     })
+// function call_id() {
+//     var target_id = ""
+//     onclick("target_id = this.id")
+//     return target_id
 // }
-function call_id() {
-    alert("This is the id" + this.id)
+
+// var clicked_element = ""
+
+// "tile-1".addEventListener(, function(event) {
+    
+// })
+// window.onload = function() {
+//     // var tile_selected = document.getElementById("tile-5")
+
+//     // tile_selected.addEventListener("click", function() {
+//     //     if(tile_selected.className == "tiles") {
+//     //         tile_selected.className = "tiles hidden"
+//     //     }
+//     // })
+// }
+//     $(document).ready(function(){
+//   $('#myid').bind('click', function(){
+//      alert($(this).attr('id'));
+//   });
+// });
+    
+//     function call_id() {
+//     var target_id = ""
+//     onclick("target_id = this.id")
+//     return target_id
+//     }
+// }
+
+window.onload = function() {
+    var element_clicked = document.addEventListener("click", function(event) {
+        console.log(event.target.id)
+    })
+    var counter = 0
+    
+    function update_counter() {
+        
+    }
 }
-
-
-
-
-// Refactored Code
-
 
 
 

@@ -9,7 +9,8 @@
     <body>
         <header>
             <nav>
-                Instructions: Click on the number tiles to make them disappear. Once you think what the picture is named, select the title from the right. 
+                <h1>Guess the Picture</h1>
+                <span>Instructions: Click on the number tiles to make them disappear. Once you think what the picture is named, select the title from the right.</span>
             </nav>
             
         </header>
@@ -18,7 +19,7 @@
             <img src="img/Across_the_Squinty_Bridge_-_geograph.org.uk_-_1554330.jpg" alt="Squinty Bridge">
             <span id="picture-credits"></span>
             
-            <div onclick="call_id" class="grid">
+            <div class="grid" id="grid">
                 <div class="tiles" id="tile-1">1</div>
                 <div class="tiles" id="tile-2">2</div>
                 <div class="tiles" id="tile-3">3</div>
@@ -48,8 +49,8 @@
             
             <div class="controls">
                 <ul class="guesses">
-                    <li><h1 class="counter">Counter</h1></li>
-                    <li><div id="counter">1</div></li>
+                    <li><h1 class="counter_label">Counter</h1></li>
+                    <li><div id="counter">0</div></li>
                     <li><h1 class="title">Possible Guesses</h1></li>
                     <li><a href="#">Test 1</a></li>
                     <li><a href="#">Test 2</a></li>
