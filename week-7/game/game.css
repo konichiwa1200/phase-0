@@ -45,6 +45,24 @@
     opacity: 0; 
 }
 
+.correct_guess {
+    position: absolute;
+    top: 115px;
+    left: 15px;
+    width: 23%;
+    background-color: lightseagreen;
+    text-align: center;
+}
+
+.correct_guess {
+    position: absolute;
+    top: 115px;
+    left: 15px;
+    width: 23%;
+    background-color: lightcoral;
+    text-align: center;
+}
+
 img {
     width: 500px;
     height: 500px;
