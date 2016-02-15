@@ -13,6 +13,7 @@
 // Functions:
 window.onload = function() {
     var counter = 1
+    var credits = ""
     var pictures = {
         short_description: [
             "Across the Squinty Bridge",
@@ -83,31 +84,43 @@ window.onload = function() {
         var random_picture_index = getRandomIntInclusive(1,4)
         var random_picture_src = document.getElementById("link" + random_picture_index).getAttribute("alt")
         var background_picture = document.getElementById("background_picture")
-        var randon_alt_index = pictures.short_description.indexOf(random_picture_src)
+        var random_alt_index = pictures.short_description.indexOf(random_picture_src)
         background_picture.setAttribute("alt", random_picture_src)
-        background_picture.setAttribute("src", "img/" + pictures.address[randon_alt_index])
+        background_picture.setAttribute("src", "img/" + pictures.address[random_alt_index])
+        credits = pictures.credits[random_alt_index]
     }
     
     function evaluate_guess(element_passed) {
         var img = document.getElementById(element_passed).getAttribute("alt")
         var guess = document.getElementById("background_picture").getAttribute("alt")
         if (img == guess) {
-            console.log("correct")
-            remove_tiles()
+            remove_tiles(element_passed, true)
+        }
+        else {
+            remove_tiles(element_passed, false)
         }
     }
     
-    function remove_tiles() {
+    function remove_tiles(element_passed, value) {
         for (var i = 1; i < 26; i++) {
             var check_tiles = document.getElementById("tile-" + i) 
             if (check_tiles.className == "tiles") {
                 check_tiles.className = "tiles hidden"
             }
         }
+        give_credits(element_passed, value)
     }
     
-    function give_credits() {
-        
+    function give_credits(element_passed, value) {
+        document.getElementById("credit_picture").innerHTML = credits
+        if (value == true) {
+            document.getElementById("status").innerHTML = "Correct!"
+            document.getElementById("credit_div").className = "correct_guess"
+        }
+        else {
+            document.getElementById("status").innerHTML = "Incorrect!"
+            document.getElementById("credit_div").className = "incorrect_guess"
+        }
     }
 }
 

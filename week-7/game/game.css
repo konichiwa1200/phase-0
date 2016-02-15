@@ -46,21 +46,11 @@
 }
 
 .correct_guess {
-    position: absolute;
-    top: 115px;
-    left: 15px;
-    width: 23%;
     background-color: lightseagreen;
-    text-align: center;
 }
 
-.correct_guess {
-    position: absolute;
-    top: 115px;
-    left: 15px;
-    width: 23%;
+.incorrect_guess {
     background-color: lightcoral;
-    text-align: center;
 }
 
 img {
@@ -114,4 +104,12 @@ a:hover, a:active, .tiles:hover {
     color: black;
     font-size: -webkit-xxx-large;
     padding: 15px;
+}
+
+#credit_div {
+    position: absolute;
+    top: 115px;
+    left: 15px;
+    width: 23%;
+    text-align: center;
 }
