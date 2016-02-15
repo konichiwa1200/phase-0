@@ -19,7 +19,6 @@
     line-height: 100px;
     vertical-align: middle;
     transition: opacity 0.2s linear;
-    opacity: 0;
 }
 
 .controls {

@@ -45,6 +45,7 @@ window.onload = function() {
     setup()
     
     document.addEventListener("click", function(event) {
+        evaluate_guess(event.target.id)
         update_counter(event.target.id)
     })
     
@@ -69,7 +70,7 @@ window.onload = function() {
             var random_int = getRandomIntInclusive(0,4)
             var picture_label = document.getElementById("link" + i)
             picture_label.innerHTML = pictures.short_description[random_int]
-            picture_label.alt = pictures.short_description[random_int]
+            picture_label.setAttribute("alt", pictures.short_description[random_int]) 
         }
         img_setup()
     }
@@ -79,17 +80,35 @@ window.onload = function() {
     }
     
     function img_setup() {
-        var random_picture = getRandomIntInclusive(1,4)
-        var random_picture_src = document.getElementById("link" + random_picture).alt
-        document.getElementById("background_picture").alt = random_picture_src
-        document.getElementById("background_picture").src = "img/" +pictures.address[random_picture]
+        var random_picture_index = getRandomIntInclusive(1,4)
+        var random_picture_src = document.getElementById("link" + random_picture_index).getAttribute("alt")
+        var background_picture = document.getElementById("background_picture")
+        var randon_alt_index = pictures.short_description.indexOf(random_picture_src)
+        background_picture.setAttribute("alt", random_picture_src)
+        background_picture.setAttribute("src", "img/" + pictures.address[randon_alt_index])
     }
     
-    // function evaluate_guess(element_passed) {
-    //     var img = document.getElementById(element_passed)
-    //     var guess = document.getElementById(element_passed)
-    //     if ()
-    // }
+    function evaluate_guess(element_passed) {
+        var img = document.getElementById(element_passed).getAttribute("alt")
+        var guess = document.getElementById("background_picture").getAttribute("alt")
+        if (img == guess) {
+            console.log("correct")
+            remove_tiles()
+        }
+    }
+    
+    function remove_tiles() {
+        for (var i = 1; i < 26; i++) {
+            var check_tiles = document.getElementById("tile-" + i) 
+            if (check_tiles.className == "tiles") {
+                check_tiles.className = "tiles hidden"
+            }
+        }
+    }
+    
+    function give_credits() {
+        
+    }
 }
 
 
