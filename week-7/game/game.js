@@ -11,6 +11,8 @@
 //     3.1 show credits at the end
 
 // Functions:
+// function used in order for js code to function properly
+// also could just move js script link in html file to bottom of body
 window.onload = function() {
     // initialized the variables that will be used downstream
     var counter = 1
@@ -163,11 +165,14 @@ window.onload = function() {
 
 
 // Reflection
-//
-//
-//
-//
-//
-//
-//
-//
+// What was the most difficult part of this challenge?
+// Researching the way to manipulate the DOM. Like the click event and passing the target id downstream
+
+// What did you learn about creating objects and functions that interact with one another?
+// Liked this top down approach. Usually code bottom up, but this challenge made top down work so smoothly
+
+// Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
+// addEventListener, setAttribute and target.id method were very useful. Looking at the code, can't wait to get a database to hold all of the information because it seems a pain to be hard-coding in the valuse for a hash when it gets larger than a couple of properties.
+
+// How can you access and manipulate properties of objects?
+// By accessing them using the dot notation and then simple assignment. Throughout the code, sometimes it seemed better to use the built-in functions for setting attributes using the key, value notation. I decided to use that for readability purposes.
