@@ -1,7 +1,7 @@
 /*
 Gradebook from Names and Scores
 I worked on this challenge [by myself, with:]
-This challenge took me [#] hours.
+This challenge took me [1] hours.
 You will work with the following two variables.  The first, students, holds the names of four students.
 The second, scores, holds groups of test scores.  The relative positions of elements within the two
 variables match (i.e., 'Joseph' is the first element in students; his scores are the first value in scores.).
@@ -22,34 +22,60 @@ var scores = [ [80, 70, 70, 100],
 
 // __________________________________________
 // Write your code below.
+// var gradebook = {
+//     "Joseph": {testScores: scores[0]}, 
+//     "Susan": {testScores: scores[1]}, 
+//     "William": {testScores: scores[2]}, 
+//     "Elizabeth": {testScores: scores[3]},
+//     addScore(name, score) {
+//         gradebook[name]["testScores"].push(score)
+//     },
+//     getAverage(name) {
+//         var scores = gradebook[name]["testScores"]
+//         return average(scores) 
+//     },
+// }
 
-
-
-
-
-
-
+// function average(arr) {
+//     return (arr.reduce(function(a, b) {
+//         return a + b
+//     }) * 1.0 / arr.length)
+// }
 
 // __________________________________________
 // Refactored Solution
+var gradebook = {}
 
+for (var i in students) {
+    gradebook[students[i]] = {}
+    gradebook[students[i]].testScores = scores[i]
+}
 
-
-
-
-
-
+gradebook.addScore = function(name, score) {
+        gradebook[name]["testScores"].push(score)
+    }
+    
+gradebook.getAverage = function(name) {
+        var scores = gradebook[name]["testScores"]
+        return average(scores) 
+    }
+    
+function average(arr) {
+    return (arr.reduce(function(a, b) {
+        return a + b
+    }) * 1.0 / arr.length)
+}
 
 // __________________________________________
 // Reflect
+// What did you learn about adding functions to objects?
+// Its easy. First confused but then when all you need to do is define the function, it seems simple
 
+// How did you iterate over nested arrays in JavaScript?
+// Using a simple for loop.
 
-
-
-
-
-
-
+// Were there any new methods you were able to incorporate? If so, what were they and how did they work?
+// the way to assign a function really challenged me. It was a foreign idea to pass the arguments for the function on an annonymous function after declaring the object property; while the property would still have access to the arguments. 
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
