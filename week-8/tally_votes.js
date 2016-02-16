@@ -67,8 +67,22 @@ var officers = {
 
 // __________________________________________
 // Initial Solution
+pres = []
+visepres = []
+sec = []
+tres = []
 
-
+for (var i in votes) {
+    pres.push(votes[i]["president"])
+    visepres.push(votes[i]["president"])
+    sec.push(votes[i]["president"])
+    tres.push(votes[i]["president"])
+    
+    pres.sort()
+    visepres.sort()
+    sec.sort()
+    tres.sort()
+}
 
 
 
