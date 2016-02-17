@@ -31,7 +31,7 @@
 
 ##RELEASE 6
 ####Schema Diagram
-![alt test](sql_schema.png "SQL Schema")
+![alt test](../imgs/sql_schema.png "SQL Schema")
 
 ##RELEASE 7
 What are databases for?
