@@ -85,7 +85,21 @@ for (var z in officers) {
 
 // __________________________________________
 // Refactored Solution
+for (var i in officers) {
+    for (var j in votes) {
+        if (voteCount[i][votes[j][i]] == undefined) {
+            voteCount[i][votes[j][i]] = 1
+        }
+        else {
+            voteCount[i][votes[j][i]] = voteCount[i][votes[j][i]] + 1
+        }
+    }
+}
 
+for (var z in officers) {
+    var keysorted = Object.keys(voteCount[z]).sort(function(a,b){return voteCount[z][b] - voteCount[z][a]})
+    officers[z] = keysorted[0]
+}
 
 
 
@@ -94,8 +108,14 @@ for (var z in officers) {
 // __________________________________________
 // Reflection
 
+// What did you learn about iterating over nested objects in JavaScript?
+// That knowing which layer you are at really makes a difference. As in Ruby, its like accessing a matrix.
 
+// Were you able to find useful methods to help you with this?
+// Yes. The sort method, which in conjunction with the annonymous function to sort from high to low, we were able to extract the high count per position
 
+// What concepts were solidified in the process of working through this challenge?
+// Accessing nested objects is exactly the same as accessing matrix elements
 
 
 
