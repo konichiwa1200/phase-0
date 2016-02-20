@@ -1,7 +1,7 @@
 /*
 Gradebook from Names and Scores
 I worked on this challenge [by myself, with:]
-This challenge took me [1] hours.
+This challenge took me [#] hours.
 You will work with the following two variables.  The first, students, holds the names of four students.
 The second, scores, holds groups of test scores.  The relative positions of elements within the two
 variables match (i.e., 'Joseph' is the first element in students; his scores are the first value in scores.).
@@ -16,54 +16,70 @@ var scores = [ [80, 70, 70, 100],
                [100, 90, 95, 85] ]
 
 
+// gradebook = {
+//   "joseph" : {testScores: [80,70,70,100]},
+  
+// }
 
-
-
+// for (var i in students) ==> 0, 1, 2 ...
 
 // __________________________________________
 // Write your code below.
-// var gradebook = {
-//     "Joseph": {testScores: scores[0]}, 
-//     "Susan": {testScores: scores[1]}, 
-//     "William": {testScores: scores[2]}, 
-//     "Elizabeth": {testScores: scores[3]},
-//     addScore(name, score) {
-//         gradebook[name]["testScores"].push(score)
-//     },
-//     getAverage(name) {
-//         var scores = gradebook[name]["testScores"]
-//         return average(scores) 
-//     },
+
+// var gradebook = {}
+
+// for (var i in students) {
+//   gradebook[students[i]] = {}
 // }
 
-// function average(arr) {
-//     return (arr.reduce(function(a, b) {
-//         return a + b
-//     }) * 1.0 / arr.length)
+// for (var i in students) {
+//   gradebook[students[i]].testScores = scores[i]
 // }
+
+// gradebook.addScore = function (name, score) {
+//   gradebook[name].testScores.push(score);
+// }
+
+// gradebook.getAverage = function (name) {
+//   var scores = gradebook[name]["testScores"]
+//   return average(scores)
+// }
+
+// function average(array) {
+//   return (array.reduce(function(num1, num2) {
+//     return num1 + num2})) * 1.0 / array.length
+// }
+
+
+// // gradebook.addScore(x, y) = addScore(name, score)
+
+// // console.log(gradebook)
+// console.log(gradebook.addScore("Elizabeth", 5))
+// console.log(gradebook)
+
+
+
 
 // __________________________________________
 // Refactored Solution
 var gradebook = {}
 
 for (var i in students) {
-    gradebook[students[i]] = {}
-    gradebook[students[i]].testScores = scores[i]
+  gradebook[students[i]] = {}
+  gradebook[students[i]].testScores = scores[i]
 }
 
-gradebook.addScore = function(name, score) {
-        gradebook[name]["testScores"].push(score)
-    }
-    
-gradebook.getAverage = function(name) {
-        var scores = gradebook[name]["testScores"]
-        return average(scores) 
-    }
-    
-function average(arr) {
-    return (arr.reduce(function(a, b) {
-        return a + b
-    }) * 1.0 / arr.length)
+gradebook.addScore = function (name, score) {
+  gradebook[name].testScores.push(score);
+}
+
+gradebook.getAverage = function (name) {
+  return average(gradebook[name].testScores)
+}
+
+function average(array) {
+  return (array.reduce(function(num1, num2) {
+    return num1 + num2})) * 1.0 / array.length
 }
 
 // __________________________________________
