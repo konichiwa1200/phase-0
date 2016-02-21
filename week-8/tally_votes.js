@@ -63,47 +63,125 @@ var officers = {
 }
 
 // Pseudocode
-
+// iterate through individuals
+//   iterate through each individuals votes, store in tally count
+//     + 1 for every candidate that receives vote
+    
+// select candidate with highest vote count
+//   present winners
 
 // __________________________________________
 // Initial Solution
-for (var i in officers) {
-    for (var j in votes) {
-        if (voteCount[i][votes[j][i]] == undefined) {
-            voteCount[i][votes[j][i]] = 1
-        }
-        else {
-            voteCount[i][votes[j][i]] = voteCount[i][votes[j][i]] + 1
-        }
-    }
-}
+// function tallyVotes(votes) {
+//   for (var vote in votes) {
+//     if (voteCount["president"][votes[vote].president] == undefined) {
+//       voteCount["president"][votes[vote].president] = 1;
+//       console.log(votes[vote]["president"])
+//     } else {
+//       voteCount["president"][votes[vote].president] += 1
+//     };
+//     if (voteCount["vicePresident"][votes[vote].vicePresident] == undefined) {
+//       voteCount["vicePresident"][votes[vote].vicePresident] = 1;
+//     } else {
+//       voteCount["vicePresident"][votes[vote].vicePresident] += 1
+//     };
+//     if (voteCount["secretary"][votes[vote].secretary] == undefined) {
+//       voteCount["secretary"][votes[vote].secretary] = 1;
+//     } else {
+//       voteCount["secretary"][votes[vote].secretary] += 1
+//     };
+//     if (voteCount["treasurer"][votes[vote].treasurer] == undefined) {
+//       voteCount["treasurer"][votes[vote].treasurer] = 1;
+//     } else {
+//       voteCount["treasurer"][votes[vote].treasurer] += 1
+//     };
+//   }
+// };
 
-for (var z in officers) {
-    var keysorted = Object.keys(voteCount[z]).sort(function(a,b){return voteCount[z][b] - voteCount[z][a]})
-    officers[z] = keysorted[0]
-}
+// function winners(voteTally) {
+//   for (var position in voteTally) {
+//     for (var people in position) {
+//       console.log("Current person: " + voteTally[position][people]);
+//     }
+//   }
+// };
 
+
+
+// function sort(group) {
+//   var sorted = group;
+//   while (true) {
+//     var madeSort = false;
+//     for (var i = 0; i < group.length + 1; i++) {
+//       if (group[i] > group[i+1]) {
+//         var hold = group[i]
+//         console.log(group[i])
+//         group[i] = group[i+1];
+//         group[i+1] = hold;
+//         madeSort = true;
+//       }
+//     }
+//     if (madeSort == false) {
+//       return sorted;
+//     }
+//   }
+// }
+// tallyVotes(votes);
+// console.log(voteCount);
+// // for (var key in voteCount) {
+// //   if (voteCount.hasOwnProperty(key)) {
+// //     console.log(key + " -> " + voteCount[key]);
+// //     for (var person in key) {
+// //       if (key.hasOwnProperty(person)) {
+// //         console.log(person + " -> " + voteCount[person]);
+// //       }
+// // }
+// //   }
+// // }
+// // console.log("Mary is the value of " + voteCount["president"]["Mary"]);
+// // console.log(winners(voteCount));
+// console.log(sorted(voteCount));
+
+
+
+// // console.log(Object.keys(voteCount))
+// function sorted(final_count){
+//   for (var i in final_count) {
+//     var keysorted = Object.keys(voteCount[i]).sort(function(a,b) {
+//      console.log("voteCount[i][b]: " + voteCount[i][b] + " b: " + b)
+//      console.log("voteCount[i][a]: " + voteCount[i][a] + " a: " + a)
+//      console.log(voteCount[i][b] - voteCount[i][a])
+//       return voteCount[i][b] - voteCount[i][a]
+//     })
+//     officers[i] = keysorted[0]
+//   }
+// }
 // __________________________________________
 // Refactored Solution
-for (var i in officers) {
-    for (var j in votes) {
-        if (voteCount[i][votes[j][i]] == undefined) {
-            voteCount[i][votes[j][i]] = 1
-        }
-        else {
-            voteCount[i][votes[j][i]] = voteCount[i][votes[j][i]] + 1
-        }
+
+function tallyVotes(votes) {
+  for (var position in officers){
+    for (var vote in votes) {
+      if (voteCount[position][votes[vote][position]] == undefined) {
+        voteCount[position][votes[vote][position]] = 1;
+      } else {
+        voteCount[position][votes[vote][position]] += 1
+      };
     }
+  }
+};
+
+function sorted(votetally){
+  for (var i in votetally) {
+    var keysorted = Object.keys(voteCount[i]).sort(function(a,b) {
+      return voteCount[i][b] - voteCount[i][a]
+    })
+    officers[i] = keysorted[0]
+  }
 }
 
-for (var z in officers) {
-    var keysorted = Object.keys(voteCount[z]).sort(function(a,b){return voteCount[z][b] - voteCount[z][a]})
-    officers[z] = keysorted[0]
-}
-
-
-
-
+tallyVotes(votes)
+sorted(voteCount)
 
 // __________________________________________
 // Reflection
@@ -116,8 +194,6 @@ for (var z in officers) {
 
 // What concepts were solidified in the process of working through this challenge?
 // Accessing nested objects is exactly the same as accessing matrix elements
-
-
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
