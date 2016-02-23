@@ -11,3 +11,9 @@
 //     place remove button next to item displayed
 
 // initial
+function hello() {
+    alert("hello world!")
+}
+
+var add_Item = document.getElementById("submit")
+add_Item.addEventListener("click", hello, false)
