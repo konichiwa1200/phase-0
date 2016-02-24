@@ -71,22 +71,38 @@ function addItem() {
 
 // function that adds item to list
 function increaseList() {
-    // varialbes need for adding to the DOM
+  // varialbes need for adding to the DOM
   var item = document.getElementById('item').value
   var quantity = document.getElementById('quantity').value
   var listItem = document.createElement('li')
-  listItem.setAttribute('id', item)
-  var listItemText = document.createTextNode(quantity + ': ' + item)
+  
+  if (document.getElementById(item) == null) {
+    listItem.setAttribute('id', item)
+    var listItemText = document.createTextNode(quantity + ': ' + item)
 
     // adds child node to DOM 
-  listItem.appendChild(listItemText)
-  document.getElementById('groceryList').appendChild(listItem)
-  
+    listItem.appendChild(listItemText)
+    document.getElementById('groceryList').appendChild(listItem)
+    
     // updates our database
-  items[item] = quantity
-  
+    items[item] = quantity
+    
     //   modularity to make code maintainable
-  makeRemoveButton(item)
+    makeRemoveButton(item)
+  }
+  else {
+    //   updates list
+    document.getElementById(item).innerHTML = quantity + ': ' + item
+    
+    //   modularity to make code maintainable
+    makeRemoveButton(item)
+    
+    //   updates database 
+    items[item] = quantity
+    
+    // clears input fields
+    clearInputField()
+  }
 }
 
 // makes a remove button to remove items from list
@@ -126,6 +142,7 @@ function evaluate_click(element) {
     // As of right now, if button or item list is clicked, it is removed
     document.getElementById('groceryList').removeChild(clicked_element)
 }
+// ----------------------------------------------------------
 
 // Reflection
 // What concepts did you solidify in working on this challenge? (reviewing the passing of information, objects, constructors, etc.)

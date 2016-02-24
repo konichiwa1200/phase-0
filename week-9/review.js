@@ -1,3 +1,5 @@
+// Challenge 9.2.2
+// ------------------------// ------------------------// ------------------------
 // Numbers to English Words
 
 // Pseudo
@@ -168,9 +170,273 @@ console.log(in_words(1010))
 // Was your pseudocode different from the Ruby version? What was the same and what was different?
 // Same pseudo. Same process, take number, split, use object in JS vs hash in Ruby, get the first 20 cases set up properly. Then get everything else to use the same code 
 
+// ------------------------// ------------------------// ------------------------
 
+// Challenge 9.2.1
+// ------------------------// ------------------------// ------------------------
+// 
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <style>
+        body {
+            background: #4cadff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
+        section {
+            padding: 0;
+            margin: 0 12%;
+            background: lightblue;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 75%;
+            
+        }
 
+        ul {
+            padding: 0px; 
+            list-style-type: none;   
+        }
 
+        li {
+            height: 35px;
+            line-height: 35px;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+
+        li:nth-child(odd) {
+            background: #4cadff;
+        }
+        /*#003c7f #4cadff #0078ff #26507f #0060cc*/
+        .remove {
+            background: red;
+            border: none;
+            height: 35px;
+            padding: 0px 30px;
+            color: white;
+            float: right;
+        }
+
+        .remove:hover, #button_submit:hover {
+            background: #003c7f;
+        }
+
+        #input {
+            display: inline-block;
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #item {
+            height: 35px;
+            text-align: center;
+            font-size: 20px;
+            border: 0;
+            padding: 0;
+            width: 65%
+        }
+
+        #quantity {
+            height: 35px;
+            text-align: center;
+            font-size: 20px;
+            border: 0;
+            padding: 0;
+            width: 20%;
+        }
+
+        #button_submit {
+            background: green;
+            border: none;
+            height: 35px;
+            color: white;
+            position: relative;
+            bottom: 4px;
+            width: 13.5%;
+        }
+        </style>
+        <title>Grocery List</title>
+    </head>
+    <body>
+        <section>
+            <h1>Grocery List</h1>
+            
+            <div id="input">
+                <input type="text" id="item" placeholder="New Item or Update Item">
+                <input type="text" id="quantity" placeholder="Quantity">
+                <button id="button_submit">Add</button>
+            </div>
+
+            
+            <h2> List: </h2>
+
+            <ul id="groceryList"></ul>
+        </section>  
+        
+        <!--JS file Below-->
+        <script>
+        // Pseudocode
+        // place field with placeholder "item"
+        // place field with placeholder "quantity"
+        // place submit button
+
+        // add items object called item
+        //     property name will be item
+        //     property value will be quantity
+
+        // display list
+        //     place remove button next to item displayed
+
+        // initial
+        // var items = {}
+
+        // function addItem() {
+        //     var item = document.getElementById("item")
+        //     var quantity = document.getElementById("quantity")
+        //     items[item.value] = quantity.value
+        //     printItem(item.value, quantity.value)
+        // }
+
+        // function printItem(item, quantity){
+        //   var myList = document.getElementById("printitems")
+        //   var mySection= document.createElement("div")
+        //   myList.appendChild(mySection)
+        
+        //   var itemPrint = document.createElement("label")
+        //   itemPrint.innerHTML = quantity + ": " + item
+        //   myList.appendChild(itemPrint)
+        
+        //   var itemRemoveButton = document.createElement("button")
+        //   itemRemoveButton.setAttribute("id", item)
+        
+        // }
+
+        // var addItemsToList = document.getElementById("submit")
+        // addItemsToList.addEventListener("click", addItem, false)
+
+        // function addItem() {
+        //     var item = document.getElementById("item").value
+        //     var node = document.createElement('LI')
+        //     var textnode = document.createTextNode(item)
+        //     node.appendChild(textnode)
+        //     document.getElementById("printList").appendChild(node)
+        // }
+
+        // Refactored
+        // sets up the necessary variables
+        var items = {}
+
+        var addItemsToList = document.getElementById("button_submit")
+        addItemsToList.addEventListener("click", addItem, false)
+
+        // ----------------------------------------------------------
+        // function that takes the value from the input fields 
+        function addItem() {
+            // variables needed
+        var item = document.getElementById('item').value
+        var quantity = document.getElementById('quantity').value
+        
+            // makes sure input has stuff to add to list   
+        if (item.length == 0 || quantity.length == 0) {
+            alert('Please enter an item on the list')
+        }
+        else {
+            //   modularity to make code maintainable
+            increaseList()
+        }
+        }
+
+        // function that adds item to list
+        function increaseList() {
+        // varialbes need for adding to the DOM
+        var item = document.getElementById('item').value
+        var quantity = document.getElementById('quantity').value
+        var listItem = document.createElement('li')
+        
+        if (document.getElementById(item) == null) {
+            listItem.setAttribute('id', item)
+            var listItemText = document.createTextNode(quantity + ': ' + item)
+
+            // adds child node to DOM 
+            listItem.appendChild(listItemText)
+            document.getElementById('groceryList').appendChild(listItem)
+            
+            // updates our database
+            items[item] = quantity
+            
+            //   modularity to make code maintainable
+            makeRemoveButton(item)
+        }
+        else {
+            //   updates list
+            document.getElementById(item).innerHTML = quantity + ': ' + item
+            
+            //   modularity to make code maintainable
+            makeRemoveButton(item)
+            
+            //   updates database 
+            items[item] = quantity
+            
+            // clears input fields
+            clearInputField()
+        }
+        }
+
+        // makes a remove button to remove items from list
+        function makeRemoveButton(item) {
+            // variables need for removing items
+        var button = document.createElement('button')
+        
+            // adds attributes to the button   
+        button.setAttribute('id', item)
+        button.setAttribute('class', 'remove')
+        button.innerHTML = 'Remove'
+        
+            // adds button to DOM   
+        document.getElementById(item).appendChild(button)
+        
+            //    modularity to make code maintainable
+        clearInputField()
+        }
+
+        // makes input fields ready for future inputs
+        function clearInputField() {
+        document.getElementById('item').value = ''
+        document.getElementById('quantity').value = ''
+        }
+
+        // records every click in the page to access to buttons id
+        document.addEventListener("click", function(event) {
+            evaluate_click(event.target.id)
+        })
+
+        // function that removes items from list
+        function evaluate_click(element) {
+            // variables needed for item removal
+            var clicked_element = document.getElementById(element)
+            
+            // limited scope. Only removes items that are child of parent nodes. 
+            // As of right now, if button or item list is clicked, it is removed
+            document.getElementById('groceryList').removeChild(clicked_element)
+        }
+        // ----------------------------------------------------------
+
+        // Reflection
+        // What concepts did you solidify in working on this challenge? (reviewing the passing of information, objects, constructors, etc.)
+        // HTML accessing and JS addition of DOM elements
+
+        // What was the most difficult part of this challenge?
+        // Selecting the color scheme for the HTML page. Decided that the list as envisioned did not need too much database selection. Would have liked to get the node child removal perfect, but time boxing prevented a complete implementation
+
+        // Did an array or object make more sense to use and why?
+        // Object, because it was associative.
+        </script>
+    </body>
+</html>
 
 
