@@ -78,6 +78,7 @@ function makeRemoveButton(item){
   var button = document.createElement('button')
   
   button.setAttribute('id', item)
+  button.setAttribute('class', 'remove')
   button.innerHTML = 'Remove'
   
   document.getElementById(item).appendChild(button)

@@ -5,15 +5,20 @@
         <title>Grocery List</title>
     </head>
     <body>
-        <h1>Grocery List</h1>
-        
-        <input type="text" id="item" placeholder="item">
-        <input type="text" id="quantity" placeholder="quantity">
-        <button id="button_submit">add</button>
-        
-        <h2> List: </h2>
+        <section>
+            <h1>Grocery List</h1>
+            
+            <div id="input">
+                <input type="text" id="item" placeholder="item">
+                <input type="text" id="quantity" placeholder="quantity">
+                <button id="button_submit">add</button>
+            </div>
 
-        <ol id="groceryList"></ol>
+            
+            <h2> List: </h2>
+
+            <ul id="groceryList"></ul>
+        </section>  
         
         <!--JS file Below-->
         <script src="grocery.js"></script>
