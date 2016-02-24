@@ -49,11 +49,11 @@
 var addItemsToList = document.getElementById("button_submit")
 addItemsToList.addEventListener("click", addItem, false)
 
-function addItem(){
+function addItem() {
   var item = document.getElementById('item').value
   var quantity = document.getElementById('quantity').value
   
-  if (item.length == 0 || quantity.length ==0) {
+  if (item.length == 0 || quantity.length == 0) {
     alert('Please enter an item on the list')
   }
   else {
@@ -74,7 +74,7 @@ function increaseList() {
   makeRemoveButton(item)
 }
 
-function makeRemoveButton(item){
+function makeRemoveButton(item) {
   var button = document.createElement('button')
   
   button.setAttribute('id', item)
@@ -89,4 +89,13 @@ function makeRemoveButton(item){
 function clearInputField() {
   document.getElementById('item').value = ''
   document.getElementById('quantity').value = ''
+}
+
+document.addEventListener("click", function(event) {
+    evaluate_click(event.target.id)
+})
+
+function evaluate_click(element) {
+    var clicked_element = document.getElementById(element)
+    document.getElementById('groceryList').removeChild(clicked_element)
 }
