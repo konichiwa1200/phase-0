@@ -51,7 +51,7 @@ def in_words(number)
     numbers_large_digits = ["", "", "hundred", "thousand"]
 
     num_array = number.to_s.split("")
-    num_len = num_array.length
+    # num_len = num_array.length
 
     if number < 10
         numbers_single_digits[num_array[0]]
@@ -63,6 +63,8 @@ def in_words(number)
         else
             numbers_double_digits[num_array[0]] + " " + numbers_single_digits[num_array[0]]
         end
+    elsif number == 100
+        numbers_single_digits[num_array[0]] + " " + numbers_large_digits[2]
     else
         "I don't know how to count that high"
     end
