@@ -43,7 +43,7 @@
 #             "c" => "y",
 #             "d" => "z"}
 
-#   # -- loops through each character in cyphered array
+#   # -- loops through each character in ciphered array
 #   input.each do |x| # What is #each doing here?
   
 #     # -- sets variable found_match to FALSE
@@ -52,10 +52,10 @@
 #     # -- loops through each key in cypher hash
 #     cipher.each_key do |y| # What is #each_key doing here?
     
-#       # -- "x" is the cyphered letter and "y" is the decyphered letter
+#       # -- "x" is the ciphered letter and "y" is the deciphered letter
 #       if x == y  # What is this comparing? Where is it getting x? Where is it getting y? What are those variables really?
       
-#         # -- pushes decyphered letter to array
+#         # -- pushes deciphered letter to array
 #         decoded_sentence << cipher[y]
         
 #         # -- sets found_match variable to true
@@ -64,10 +64,10 @@
 #         # -- breaks out of the loop to proceed to the next letter
 #         break  # Why is it breaking here?
         
-#       # -- testing if cyphered letter is special symbol
+#       # -- testing if ciphered letter is special symbol
 #       elsif x == "@" || x == "#" || x == "$" || x == "%"|| x == "^" || x == "&"|| x =="*" #What the heck is this doing?
         
-#         # -- pushes decyphered letter to array
+#         # -- pushes deciphered letter to array
 #         decoded_sentence << " "
         
 #         # -- sets found_match variable to true
@@ -80,7 +80,7 @@
 #       # -- creates an array of numbers 0 to 9 inclusive
 #       elsif (0..9).to_a.include?(x) # Try this out in IRB. What does   " (0..9).to_a "    do?
       
-#         # -- pushes decyphered letter to array
+#         # -- pushes deciphered letter to array
 #         decoded_sentence << x
         
 #         # -- sets found_match variable to true
@@ -91,14 +91,14 @@
 #       end
 #     end
     
-#     # -- pushes cyphered letter to array if it wasn't able to decypher it
+#     # -- pushes ciphered letter to array if it wasn't able to decypher it
 #     # -- looking for punctuation marks
 #     if not found_match  # What is this looking for?
 #       decoded_sentence << x
 #     end
 #   end
   
-#   # -- joins decyphered character into sentence and returns it
+#   # -- joins deciphered character into sentence and returns it
 #   decoded_sentence = decoded_sentence.join("")
 #   #What is this method returning?
 #   # -- returning a string phrase
