@@ -1,8 +1,31 @@
+# Reverse Words
+
+
+# I worked on this challenge [by myself, with: ].
+# This challenge took me [#] hours.
+
 # Pseudocode
 
-# Initial
 
-# Refactored
+
+# Initial Solution
+# def reverse_words(phrase)
+#     phrase_array = phrase.split(' ')
+#     phrase_array.map{|word| word.reverse()}.join(" ")
+# end
+
+# puts reverse_words("This is a test")
+# puts reverse_words("Why NOt")
+# puts reverse_words("abcdefg")
+
+
+
+# Refactored Solution
+def reverse_words(phrase)
+    phrase.split(' ').map{|word| word.reverse()}.join(" ")
+end
+
+
 
 
 # Reflection
