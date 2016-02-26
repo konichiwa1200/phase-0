@@ -147,12 +147,17 @@ assert { test5 == product }
 test6 = num1.to_f / num2.to_f
 assert { test6 == quotient }
 
-test6 = num1 % num2
-assert { test6 == modulus }
+test7 = num1 % num2
+assert { test7 == modulus }
 
 
 
 # 5. Reflection
 # What concepts did you review in this challenge?
+# checking the class of on object and its defined scope
+
 # What is still confusing to you about Ruby?
+# the original code was too simple and resulted in confusing when the code was being executed and why. By looking at more length code, some of the confusion was removed.
+
 # What are you going to study to get more prepared for Phase 1?
+# Testing + Rails intro
