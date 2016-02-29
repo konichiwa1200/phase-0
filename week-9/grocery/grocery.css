@@ -1,21 +1,32 @@
 body {
-    background: #4cadff;
+    background: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 section {
     padding: 0;
     margin: 0 12%;
-    background: lightblue;
+    background: black;
     height: 100%;
     position: absolute;
     top: 0;
     width: 75%;
+    color: white;
     
 }
 
+h1 {
+    text-align: center;
+    margin: 3%;
+    font-size: 2em;
+}
+
+h2 {
+    margin: 3% 5%;
+}
+
 ul {
-    padding: 0px; 
+    padding: 0 5%; 
     list-style-type: none;   
 }
 
@@ -27,9 +38,15 @@ li {
 }
 
 li:nth-child(odd) {
-    background: #4cadff;
+    background: grey;
+    color: black;
 }
-/*#003c7f #4cadff #0078ff #26507f #0060cc*/
+
+li:nth-child(even) {
+    background: gainsboro;
+    color: black;
+}
+
 .remove {
     background: red;
     border: none;
@@ -45,9 +62,9 @@ li:nth-child(odd) {
 
 #input {
     display: inline-block;
-    padding: 0px;
+    padding: 0 5%;
     margin: 0px;
-    width: 100%;
+    width: 90%;
     text-align: center;
 }
 
